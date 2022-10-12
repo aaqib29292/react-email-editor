@@ -44,7 +44,7 @@ const Example = (props) => {
 
   const saveDesign = () => {
     emailEditorRef.current.editor.saveDesign((design) => {
-      console.log('saveDesign', design);
+      console.log('saveDesign', JSON.stringify(design);
       alert('Design JSON has been logged in your developer console.');
     });
   };
