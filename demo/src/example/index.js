@@ -44,7 +44,7 @@ const Example = (props) => {
 
   const saveDesign = () => {
     emailEditorRef.current.editor.saveDesign((design) => {
-      console.log('saveDesign', JSON.stringify(design);
+      console.log(JSON.stringify(design))
       alert('Design JSON has been logged in your developer console.');
     });
   };
@@ -52,7 +52,7 @@ const Example = (props) => {
   const exportHtml = () => {
     emailEditorRef.current.editor.exportHtml((data) => {
       const { design, html } = data;
-      console.log('exportHtml', html);
+      console.log(html);
       alert('Output HTML has been logged in your developer console.');
     });
   };
