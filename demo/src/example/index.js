@@ -45,6 +45,7 @@ const Example = (props) => {
   const saveDesign = () => {
     emailEditorRef.current.editor.saveDesign((design) => {
       console.log(JSON.stringify(design))
+      localStorage.setItem("email-design", JSON.stringify(design));
       alert('Design JSON has been logged in your developer console.');
     });
   };
@@ -68,8 +69,8 @@ const Example = (props) => {
       'design:loaded',
       onDesignLoad
     );
-
-    emailEditorRef.current.editor.loadDesign(sample);
+    const design = localStorage.getItem("email-design");
+    emailEditorRef.current.editor.loadDesign(design ? JSON.parse(design) : sample);
   }
 
   const onReady = () => {
