@@ -77,11 +77,16 @@ const Example = (props) => {
     console.log('onReady');
   };
 
+  const addDesign = () => {
+    let template = prompt("Please enter your name:", "Harry Potter");
+    emailEditorRef.current.editor.loadDesign(JSON.parse(template));
+  }
+
   return (
     <Container>
       <Bar>
         <h1>React Email Editor (Demo)</h1>
-
+        <button onClick={addDesign}>Load Design</button>
         <button onClick={saveDesign}>Save Design</button>
         <button onClick={exportHtml}>Export HTML</button>
       </Bar>
