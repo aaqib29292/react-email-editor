@@ -78,8 +78,10 @@ const Example = (props) => {
   };
 
   const addDesign = () => {
-    let template = prompt("Please enter your name:", "Harry Potter");
-    emailEditorRef.current.editor.loadDesign(JSON.parse(template));
+    const design = localStorage.getItem("email-design");
+
+    let template = prompt("Please paste/add the design here:",);
+    emailEditorRef.current.editor.loadDesign(JSON.parse(template))
   }
 
   return (
